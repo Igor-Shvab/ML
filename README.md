@@ -139,3 +139,7 @@ train and test frames
 ###### 02-ProcessDataset.py
 This script will create data frames (training, testing) with engineered features for classification 
 approach. Feature engineering configurations will be loaded from 'feature_engineering.xml' file.
+
+There are four directories for each benchmark test. Each benchmark test
+has been carried out using three machine learning algorithms. Run each 
+script to check the model performance in each approach.
