@@ -51,3 +51,91 @@ python scripts in order.
 
 ###### 01-ConvertToCSV.py
 This will convert all the data files in .txt 
+
+###### 02-ProcessDataset.py
+This script will create data frames (training, testing) with engineered features for regression and classification 
+approach. Feature engineering configurations will be loaded from 'feature_engineering.xml' file.
+
+```
+<flow>
+    <moving_k_closest_average window="5" k_closest="3">
+        <feature>Sensor1</feature>
+        <feature>Sensor2</feature>
+        <feature>Sensor3</feature>
+        <feature>Sensor4</feature>
+        <feature>Sensor5</feature>
+        <feature>Sensor6</feature>
+        <feature>Sensor7</feature>
+        <feature>Sensor9</feature>
+        <feature>Sensor10</feature>
+        <feature>Sensor11</feature>
+        <feature>Sensor12</feature>
+        <feature>Sensor13</feature>
+        <feature>Sensor14</feature>
+        <feature>Sensor15</feature>
+        <feature>Sensor16</feature>
+        <feature>Sensor17</feature>
+        <feature>Sensor18</feature>
+        <feature>Sensor19</feature>
+        <feature>Sensor20</feature>
+        <feature>Sensor21</feature>
+    </moving_k_closest_average>
+    <moving_variance window="5">
+        <feature>Sensor1</feature>
+        <feature>Sensor2</feature>
+        <feature>Sensor3</feature>
+        <feature>Sensor4</feature>
+        <feature>Sensor5</feature>
+        <feature>Sensor6</feature>
+        <feature>Sensor7</feature>
+        <feature>Sensor9</feature>
+        <feature>Sensor10</feature>
+        <feature>Sensor11</feature>
+        <feature>Sensor12</feature>
+        <feature>Sensor13</feature>
+        <feature>Sensor14</feature>
+        <feature>Sensor15</feature>
+        <feature>Sensor16</feature>
+        <feature>Sensor17</feature>
+        <feature>Sensor18</feature>
+        <feature>Sensor19</feature>
+        <feature>Sensor20</feature>
+        <feature>Sensor21</feature>
+    </moving_variance>
+</flow>
+```
+
+Processed csv files will be stored in the 'processed-data' directory
+in each test. So data processing happens only once which allows you to 
+compare different algorithms with similar features.
+
+There are two directories, **test-regression** and **test-classification** 
+separately. 
+ 
+Classification test has been carried out using three algorithms. 
+
+* Deep Learning
+* Random Forest
+* Gradient Boost
+
+Regression test has been carried out using four algorithms.
+
+* Deep Learning
+* Random Forest
+* Gradient Boost
+* Generalized Linear
+
+You can simply run each script and test the performance for
+each model
+
+##### Yahoo - Web Scope
+*The Yahoo Webscope Program is a reference library of interesting and scientifically useful datasets for non-commercial 
+use by academics and other scientists.*
+
+###### 01-MergeFiles.py
+This will merge individual benchmark data files and split them to 
+train and test frames 
+
+###### 02-ProcessDataset.py
+This script will create data frames (training, testing) with engineered features for classification 
+approach. Feature engineering configurations will be loaded from 'feature_engineering.xml' file.
